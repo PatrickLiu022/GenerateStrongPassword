@@ -1,4 +1,6 @@
 /*
+Patrick Liu 
+08/16
 */
 
 import java.util.*;
@@ -10,9 +12,6 @@ public class PasswordMaker {
       boolean continueGenerate = true;
       intro();
       
-      System.out.println("Exclude any characters?");
-      System.out.println("type: no = no exclusion, yes = exclude characters");
-      System.out.print("exclude characters? ");
       String exclude = console.nextLine();
       System.out.print("How many passwords to generate? ");
       int num = console.nextInt();
@@ -30,7 +29,9 @@ public class PasswordMaker {
       System.out.println("Welcome to the Strong Password Generator");
       System.out.println("This program will help you create a strong password");
       System.out.println("Use this anytime you need a password change");
-      System.out.println();
+      System.out.println("Exclude any characters?");
+      System.out.println("type: no = no exclusion, yes = exclude characters");
+      System.out.print("exclude characters? ");
    }
    
    public static void generatePassword(Scanner console, StrongPasswordGenerator strongPass, String exclude){
@@ -60,10 +61,5 @@ public class PasswordMaker {
       }
       
    }
-   
-//    public static String regularPassword(Scanner console){
-//          
-//    }
-   
    
 }   
