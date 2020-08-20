@@ -18,4 +18,4 @@ Currently working/adding/debugging on features:
 This is just a rough draft! contact me if you wanna work on it w me?
 
 pzl2@uw.edu
-@pattymcfattty
+
