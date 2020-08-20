@@ -1,4 +1,4 @@
-# GenerateStrongPassword
+# StrongPasswordGenerator
 This program generates a strong password the user.
 It uses upper case, lower case, numerical, and symbolic characters.
 You can choose to exclude certain characters as well.
