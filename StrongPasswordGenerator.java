@@ -10,6 +10,7 @@ public class StrongPasswordGenerator {
 
    private int size;                         //records password size
    private ArrayList<Character> password;    //contains generated password
+   private Random r;
 
    private static final int ASCII = 93;      //this alogirthm will use 93 kinds of ASCII characters
 
@@ -47,7 +48,7 @@ public class StrongPasswordGenerator {
    //      cahracter into a new password
    public void set(int length){
       int count = 0;
-      Random r = new Random();
+      r = new Random();
 
       if (length <= 0){
          throw new IllegalArgumentException();
@@ -78,7 +79,10 @@ public class StrongPasswordGenerator {
             }
          }
       }
-
+      while(count > 0){
+          password.add(r.nextInt(ASCII)+33);
+          count--;
+      }
       return password;
    }
 
