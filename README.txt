@@ -8,10 +8,11 @@ FEATURES:
    DONE:
       Users can generate a password for length i;
       Users can choose to exclude characters.
+      Fixed password length after excluding characters
 
    IN PROGRESS: 
       Printing the password to an output file.
-      Fixing password creation after exlcuding characters
+      Generating password characters after specified not to exclude 
       Conducting samples for user preference on how the password is presented.
    FUTURE FEATURES:
       User can enter as many passwords as desired.
