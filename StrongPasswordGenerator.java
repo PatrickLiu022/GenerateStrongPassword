@@ -12,7 +12,7 @@ public class StrongPasswordGenerator {
    private ArrayList<Character> password;    //contains generated password
    private Random r;
 
-   private static final int ASCII = 93;      //this alogirthm will use 93 kinds of ASCII characters
+   private static final int ASCII = 93;      //will choose from 93 kinds of ASCII characters
 
    //post: new password length is 0
    public StrongPasswordGenerator(){
@@ -79,12 +79,31 @@ public class StrongPasswordGenerator {
             }
          }
       }
-      while(count > 0){
-          password.add(r.nextInt(ASCII)+33);
-          count--;
-      }
+      exclude(count, other);  
+
       return password;
    }
+   
+   private void exclude(int count, StrongPasswordGenerator other){
+      int val = r.nextInt(ASCII) + 33;
+      
+      for (int i = count; i > 0; i++){
+         while (other.contains((char) val, other)){
+            val = r.nextInt(ASCII) +  33;  
+         } 
+         password.add((char) val);
+         count--;        
+      } 
+   }
+   
+   private boolean contains(char val, StrongPasswordGenerator other){
+      for (int i = 0; i < other.size(); i++){
+         if (other.toString().charAt(i) == val){
+            return !(other.toString().charAt(i) == val);
+         }
+      }
+      return true;
+   }  
 
    //post: Takes the array of individual characters in the password
    //      and stores them together in a string
