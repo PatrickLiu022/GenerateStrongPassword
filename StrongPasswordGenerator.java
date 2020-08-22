@@ -67,7 +67,7 @@ public class StrongPasswordGenerator {
    //      specified by the user
    //psot: Checks if the characters the user wants to exclude exists in the
    //      new generated password and removes it if it exists.
-   public ArrayList<Character> exclude(StrongPasswordGenerator other){
+   public StrongPasswordGenerator exclude(StrongPasswordGenerator other){
        int count = 0;
       for (Iterator<Character> itr = password.iterator();itr.hasNext(); ){
          Character c = itr.next();
@@ -81,7 +81,7 @@ public class StrongPasswordGenerator {
       }
       exclude(count, other);  
 
-      return password;
+      return new StrongPasswordGenerator(password.toString());
    }
    
    private void exclude(int count, StrongPasswordGenerator other){

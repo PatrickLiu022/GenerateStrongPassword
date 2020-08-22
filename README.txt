@@ -9,6 +9,7 @@ FEATURES:
       Features:
       	 Users can generate a password for length i. 8/16
          Users can choose to exclude characters.     8/16
+         Password will be presented as a String 8/20
       Bugs:
          Resolved password not meeting length requirements after excluding characters. 8/18
          Resolved Regenerating unwanted characters bug. 8/18
@@ -16,7 +17,6 @@ FEATURES:
 
    IN PROGRESS:
       Printing the password to an output file.
-      Conducting samples for user preference on how the password is presented.
    FUTURE FEATURES:
       User can enter as many passwords as desired.
       Can choose which passwords to change for which accounts.
