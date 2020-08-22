@@ -6,10 +6,12 @@ You can choose to exclude certain characters as well.
 FEATURES: 
 
    DONE:
-      Users can generate a password for length i;
-      Users can choose to exclude characters.
-      Resolved password not meeting length requirements after excluding characters
-      Resolved Regenerating unwanted characters bug
+      Features:
+         Users can generate a password for length i;
+         Users can choose to exclude characters.
+      Bugs: 
+         Resolved password not meeting length requirements after excluding characters
+         Resolved Regenerating unwanted characters bug
 
    IN PROGRESS: 
       Printing the password to an output file.
