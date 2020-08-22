@@ -1,6 +1,6 @@
 /*
-Patrick Liu
-8/16/20
+Patrick Liu 
+08/18/2020 - current, 08/22/2020
 */
 import java.util.*;
 
