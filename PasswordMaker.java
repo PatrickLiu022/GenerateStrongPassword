@@ -7,12 +7,10 @@ public class PasswordMaker {
 
    public static void main(String[] args){
       Scanner console = new Scanner(System.in);
-      
+      String start;
       intro();
-      System.out.print("End program? (y/n): ");
-      String start = console.nextLine();
       
-      while(!start.startsWith("y")){
+      do {
          StrongPasswordGenerator strongPass = new StrongPasswordGenerator("");
          Scanner redo = new Scanner(System.in);
          System.out.println("Character exclusion:");
@@ -23,10 +21,11 @@ public class PasswordMaker {
             excludePassword(strongPass, exclude);
          } else {
             regularPassword(console, strongPass);
-         }
+         } 
          System.out.print("End program? (y/n): ");
-         start = redo.nextLine();
-      }
+         start = redo.nextLine(); 
+      }  while(!start.startsWith("y"));
+      
    }
    
    public static void intro(){
@@ -44,9 +43,12 @@ public class PasswordMaker {
       System.out.print("Which characters to exclude? ");
       String excludeChars = consoleNew.nextLine();
       excluder = new StrongPasswordGenerator(excludeChars);
-      System.out.print("password length? ");
-      int length = consoleNew.nextInt();
-      strongPass.set(length);
+      try {
+         System.out.print("password length? ");
+         strongPass.set(consoleNew.nextInt());
+      } catch (Exception e){
+         System.out.println("Please enter an integer value greater than 6");
+      }
       strongPass.exclude(excluder);
       strongPass.toString();
       System.out.println("Your new strong password is: " + strongPass);
@@ -55,8 +57,12 @@ public class PasswordMaker {
    }
    
    public static void regularPassword(Scanner console, StrongPasswordGenerator strongPass){
-         System.out.print("password length? ");
-         strongPass.set(console.nextInt());
+         try {
+            System.out.print("password length? ");
+            strongPass.set(console.nextInt());
+         } catch (Exception e) {
+            System.out.println("Please enter an integer value greater than 6");
+         }
          String generatedPass = strongPass.toString();
          generatedPass = generatedPass.replace(" ", ".");
          System.out.println("Your new strong password is " + generatedPass);
