@@ -25,10 +25,12 @@ FUTURE DEVELOPMENT:
 In order to ensure consistency across the users' devices, future development for a security app will be underway. This will be done through XCode.
 
 PasswordMaker.java:
-   PasswordMaker prompts the user to enter how many passwords to generate and if they want to exclude          characters. Then generates password.
-      Using a Scanner object to control password generation by taking user input.
+   PasswordMaker prompts the user to either 1) end the program or 2) generate a password and 
+   if they want to exclude characters. Then it generates a new strong password. Uses a Scanner 
+   object to control password generation by taking user input.
 StrongPasswordGenerator
-   StrongPasswordGenerator stores a randomly generated password using ASCII values stores in an ArrayList      object.
+   StrongPasswordGenerator stores a randomly generated password using ASCII values stored in an
+   ArrayList object.
 
 This is just a rough draft! Contact me if you want to work on it with me!
 
