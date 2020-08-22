@@ -7,13 +7,13 @@ public class PasswordMaker {
 
    public static void main(String[] args){
       Scanner console = new Scanner(System.in);
-      StrongPasswordGenerator strongPass = new StrongPasswordGenerator("");
       
       intro();
       System.out.print("End program? (y/n): ");
       String start = console.nextLine();
       
       while(!start.startsWith("y")){
+         StrongPasswordGenerator strongPass = new StrongPasswordGenerator("");
          Scanner redo = new Scanner(System.in);
          System.out.println("Character exclusion:");
          System.out.println("type no for no exclusion, yes to exclude characters");
@@ -46,8 +46,9 @@ public class PasswordMaker {
       excluder = new StrongPasswordGenerator(excludeChars);
       System.out.print("password length? ");
       strongPass.set(consoleNew.nextInt());
+      String generatedPass = strongPass.toString();
       list = strongPass.exclude(excluder);
-      String generatedPass = list.toString();
+      generatedPass = list.toString();
       generatedPass.replace(" ", ".");
       System.out.println("Your new strong password is: " + generatedPass);
       
