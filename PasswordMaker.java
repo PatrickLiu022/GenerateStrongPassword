@@ -38,7 +38,6 @@ public class PasswordMaker {
    
    public static void excludePassword(StrongPasswordGenerator strongPass, String exclude){
       StrongPasswordGenerator excluder;
-      ArrayList<Character> list;
       Scanner consoleNew = new Scanner(System.in);
       
       System.out.print("Which characters to exclude? ");
@@ -47,8 +46,8 @@ public class PasswordMaker {
       System.out.print("password length? ");
       strongPass.set(consoleNew.nextInt());
       String generatedPass = strongPass.toString();
-      list = strongPass.exclude(excluder);
-      generatedPass = list.toString();
+      strongPass = strongPass.exclude(excluder);
+      stringPass.toString();
       generatedPass.replace(" ", ".");
       System.out.println("Your new strong password is: " + generatedPass);
       
