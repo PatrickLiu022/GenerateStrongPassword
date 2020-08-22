@@ -69,12 +69,12 @@ public class StrongPasswordGenerator {
    //      new generated password and removes it if it exists.
    public ArrayList<Character> exclude(StrongPasswordGenerator other){
       int count = 0;
-      for (Iterator<Character> itr = password.iterator();itr.hasNext(); ){
-         Character pass = itr.next();
-         for (Iterator<Character> itrExclude = other.password.iterator(); itrExclude.hasNext(); ){
-            Character remove = itrExclude.next();
+      for (int i = 0; i < password.size(); i++){
+         Character pass = password.toString().charAt(i);
+         for (int j = 0; j < other.password.size(); j++){
+            Character remove = other.password.toString().charAt(i);
             if (pass.equals(remove)){
-               itr.remove();
+               password.remove(pass);
                count++;
             }
          }
