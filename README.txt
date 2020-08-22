@@ -17,6 +17,8 @@ FEATURES:
 
    IN PROGRESS:
       Printing the password to an output file.
+      Bugs: 
+	 exclude method accounts for brackets and commas, messing up count variables
    FUTURE FEATURES:
       User can enter as many passwords as desired.
       Can choose which passwords to change for which accounts.
