@@ -76,6 +76,7 @@ public class StrongPasswordGenerator {
             if (pass.equals(remove)){
                password.remove(pass);
                count++;
+               break;
             }
          }
       }
