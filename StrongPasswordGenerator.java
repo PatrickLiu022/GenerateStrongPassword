@@ -2,6 +2,12 @@
 Patrick Liu 
 08/18/2020 - current, 08/22/2020
 */
+
+
+/*BUGS
+exclude: adding chars by calling contains generated 
+chars that were specified to be excluded
+*/
 import java.util.*;
 
 //class generates a random array of characters on the ASCII table
@@ -73,6 +79,7 @@ public class StrongPasswordGenerator {
       for (int i = 0; i < password.size(); i++){
          if (other.contains(password.get(i))){
             password.remove(password.get(i));
+            i--;
             count++;
          }
       }
