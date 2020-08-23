@@ -1,5 +1,8 @@
 /* Patrick Liu
    08/22/2020
+   Through testing a chunk of code, I was able to visualize and see not only 
+   where it's not going to specs, this helped me compare between methods easier 
+   and actually let me understand why it wasn't going to specs.
 */
    
 import java.util.*;
