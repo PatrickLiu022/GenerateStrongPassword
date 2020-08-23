@@ -1,30 +1,28 @@
 /*
 Patrick Liu 
-08/18/2020 - current, 08/22/2020
+start StrongPasswordGenerator: 08/18/2020  
+StrongPasswordGenerator is functional: 08/23/2020
 */
 
 
-/*BUGS
-exclude method: adds on excluded characters to the end after removing them
-*/
 import java.util.*;
 
 //class generates a random array of characters on the ASCII table
-//that will be used as a new password for the user
+//that will be used as a new password for the user.
 public class StrongPasswordGenerator {
 
-   private int size;                         //records password size
-   private ArrayList<Character> password;    //contains generated password
+   private int size;                         //records password size.
+   private ArrayList<Character> password;    //contains generated password.
    private Random r;
 
-   private static final int ASCII = 93;      //will choose from 93 kinds of ASCII characters
+   private static final int ASCII = 93;      //will choose from 93 kinds of ASCII characters.
 
    //post: new password length is 0
    public StrongPasswordGenerator(){
       size = 0;
    }
 
-   //pre:  A password is generated
+   //pre:  A password is generated.
    //post: counts the characters in the given password and
    //      a stores each character individually. Stores the
    //      size of the password.
@@ -36,21 +34,21 @@ public class StrongPasswordGenerator {
       }
    }
 
-   //post: gives the size of the password
+   //post: gives the size of the password.
    public int size(){
       return size;
    }
 
-   //post: returns the password
+   //post: returns the password.
    public ArrayList<Character> get(){
       return password;
    }
 
    //pre:  @exception IllegalArgumentException if the
    //      length of desired password is less than or equal
-   //      to zero
+   //      to zero.
    //post: generates random ASCII characters and stores each
-   //      cahracter into a new password
+   //      cahracter into a new password.
    public void set(int length){
       int count = 0;
       r = new Random();
@@ -69,7 +67,7 @@ public class StrongPasswordGenerator {
    }
 
    //pre:  characters that are not desired in the new password have been
-   //      specified by the user
+   //      specified by the user.
    //psot: Checks if the characters the user wants to exclude exists in the
    //      new generated password and removes it if it exists.
    public ArrayList<Character> exclude(ArrayList<Character> other){
@@ -87,6 +85,10 @@ public class StrongPasswordGenerator {
       return password;
    }
    
+   //pre:  the user has entered the characters they want to exclude and
+   //      is stored in an array.
+   //post: generates as many ASCII characters for the new strong password 
+   //      as needed to replace the excluded characters.   
    private void exclude(int count, ArrayList<Character> other){
       int val = r.nextInt(ASCII) + 33;
       
@@ -99,6 +101,10 @@ public class StrongPasswordGenerator {
       } 
    }
    
+   //pre:  a single character and the array of characters to be excluded
+   //      exists.
+   //post: true if the variable exists in the array, false if the variable
+   //      does not exist.
    public boolean includes(char val, ArrayList<Character> other){
       for (int i = 0; i < other.size(); i++){
          if (other.get(i) == val){
@@ -109,7 +115,7 @@ public class StrongPasswordGenerator {
    } 
   
    //post: Takes the array of individual characters in the password
-   //      and stores them together in a string
+   //      and stores them together in a string.
    public String toString(){
       String strPass = "";
       for (char c : password){

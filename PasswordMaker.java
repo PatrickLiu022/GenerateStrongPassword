@@ -1,19 +1,26 @@
 /*
 Patrick Liu 
-08/18/2020 - current, 08/22/2020
+start PasswordMaker:08/18/2020 
+PasswordMaker is functional: 8/22/2020
 */
 
 import java.util.*;
 
+//class prompts user to generate a password, with or without certain
+//characters only.
 public class PasswordMaker {
-
+   
+   //pre:  prompts user to specify if they want to exclude characters
+   //      and how long they want the password to be. User can end the
+   //      program anytime.
+   //post: prints out the new strong password for the user.
    public static void main(String[] args){
       Scanner console = new Scanner(System.in);
       String start;
       intro();
       
       do {
-         StrongPasswordGenerator strongPass = new StrongPasswordGenerator("");
+         StrongPasswordGenerator strongPass = new StrongPasswordGenerator(""); //new StrongPasswordGenerator object
          Scanner redo = new Scanner(System.in);
          System.out.println("Character exclusion:");
          System.out.println("type no for no exclusion, yes to exclude characters");
@@ -30,6 +37,9 @@ public class PasswordMaker {
       
    }
    
+   
+   //post: prints out an introduction and defines what a strong
+   //      password is for the user
    public static void intro(){
       System.out.println("Welcome to the Strong Password Generator");
       System.out.println("This program will help you create a strong password.");
@@ -40,6 +50,9 @@ public class PasswordMaker {
 
    }
    
+   //pre:  prompts user to enter which characters to exclude and how long
+   //      they want the password to be. Exception thrown if length < 6.
+   //post: prints out a new strong password for the user.
    public static void excludePassword(StrongPasswordGenerator strongPass, String exclude){
       StrongPasswordGenerator excluder;
       ArrayList<Character> list;
@@ -61,6 +74,8 @@ public class PasswordMaker {
       
    }
    
+   //pre:  prompts user for password length. Exception thrown if length < 6.
+   //post: generates a new strong password.
    public static void regularPassword(Scanner console, StrongPasswordGenerator strongPass){
          try {
             System.out.print("password length? ");
