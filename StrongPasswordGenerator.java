@@ -12,7 +12,7 @@ import java.util.*;
 public class StrongPasswordGenerator {
 
     private int size; //records password size.
-    private ArrayList < Character > password; //contains generated password.
+    private ArrayList <Character> password; //contains generated password.
     private Random r;
 
     private static final int ASCII = 93; //will choose from 93 kinds of ASCII characters.
@@ -27,7 +27,7 @@ public class StrongPasswordGenerator {
     //      a stores each character individually. Stores the
     //      size of the password.
     public StrongPasswordGenerator(String data) {
-        password = new ArrayList < Character > ();
+        password = new ArrayList <Character> ();
         for (int i = 0; i < data.length(); i++) {
             password.add(data.charAt(i));
             size++;
@@ -40,7 +40,7 @@ public class StrongPasswordGenerator {
     }
 
     //post: returns the password.
-    public ArrayList < Character > get() {
+    public ArrayList <Character> get() {
         return password;
     }
 
@@ -70,7 +70,7 @@ public class StrongPasswordGenerator {
     //      specified by the user.
     //psot: Checks if the characters the user wants to exclude exists in the
     //      new generated password and removes it if it exists.
-    public ArrayList < Character > exclude(ArrayList < Character > other) {
+    public ArrayList <Character> exclude(ArrayList <Character> other) {
         int count = 0;
 
         for (int i = 0; i < password.size(); i++) {
@@ -89,7 +89,7 @@ public class StrongPasswordGenerator {
     //      is stored in an array.
     //post: generates as many ASCII characters for the new strong password 
     //      as needed to replace the excluded characters.   
-    private void exclude(int count, ArrayList < Character > other) {
+    private void exclude(int count, ArrayList <Character> other) {
         int val = r.nextInt(ASCII) + 33;
 
         for (int i = count; i > 0; i--) {
@@ -105,7 +105,7 @@ public class StrongPasswordGenerator {
     //      exists.
     //post: true if the variable exists in the array, false if the variable
     //      does not exist.
-    public boolean includes(char val, ArrayList < Character > other) {
+    public boolean includes(char val, ArrayList <Character> other) {
         for (int i = 0; i < other.size(); i++) {
             if (other.get(i) == val) {
                 return other.get(i) == val;
@@ -118,7 +118,7 @@ public class StrongPasswordGenerator {
     //      and stores them together in a string.
     public String toString() {
         String strPass = "";
-        for (char c: password) {
+        for (char c : password) {
             strPass += c;
         }
         return strPass;
