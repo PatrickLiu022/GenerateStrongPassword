@@ -6,6 +6,11 @@ You can choose to exclude certain characters as well.
 FEATURES:
 
    DONE:
+      Program Integrity:
+	 First release of program functions correctly 8/22
+	    User can generate a new strong password; They can choose which characters to
+	    exclude and choose the length of the new password. User can generate as many
+	    passwords as desired.
       Features:
       	 Users can generate a password for length i. 8/16
          Users can choose to exclude characters.     8/16
@@ -15,14 +20,15 @@ FEATURES:
          Resolved Regenerating unwanted characters bug. 8/18
 	 Resolved previous password adding on to new password bug. 8/20
 	 Resolved exclude method accounting for brackets and commas, 8/22
-         User can enter as many passwords as desired. 8/22
+         Resolved User not being able to enter as many passwords as desired. 8/22
+	 Resolved excluding characters adds on those characters to the end of the password 8/22
 
    IN PROGRESS:
       Features:
          Printing the password to an output file.
 	 Changing password for specific account (maps)
       Bugs: 
-	 excluding characters adds on those characters to the end of the password
+	 No current bugs; all bugs resolved as of 8/22
 
    FUTURE FEATURES:
       Can choose which passwords to change for which accounts.
