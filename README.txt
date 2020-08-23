@@ -23,6 +23,7 @@ FEATURES:
 	 Changing password for specific account (maps)
       Bugs: 
 	 excluding characters adds on those characters to the end of the password
+
    FUTURE FEATURES:
       Can choose which passwords to change for which accounts.
 
