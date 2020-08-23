@@ -2,12 +2,13 @@
 This program generates a strong password the user.
 It uses upper case, lower case, numerical, and symbolic characters.
 You can choose to exclude certain characters as well.
+- Patrick Liu
 
 FEATURES:
 
    DONE:
       Program Integrity:
-	 First release of program functions correctly 8/22
+	 First version of program functions correctly 8/22
 	    User can generate a new strong password; They can choose which characters to
 	    exclude and choose the length of the new password. User can generate as many
 	    passwords as desired.
@@ -36,10 +37,13 @@ FEATURES:
 FUTURE DEVELOPMENT:
 In order to ensure consistency across the users' devices, future development for a security app will be underway. This will be done through XCode.
 
+
 PasswordMaker.java:
    PasswordMaker prompts the user to either 1) end the program or 2) generate a password and 
    if they want to exclude characters. Then it generates a new strong password. Uses a Scanner 
    object to control password generation by taking user input.
+   
+   
 StrongPasswordGenerator
    StrongPasswordGenerator stores a randomly generated password using ASCII values stored in an
    ArrayList object.
