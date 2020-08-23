@@ -39,39 +39,32 @@ public class testExclude {
       }
             
    }
+       //public private pair recursion not needed, try using for loop instead.
+       //confirmed for loop fixed bug.
    
-//    public static void exclude(ArrayList<Character> other){
-//       password = exclude(password, other, 0);
-//    }
-//    
-//    private static ArrayList<Character> exclude(ArrayList<Character> password, 
-//                               ArrayList<Character> other, int count){
-//       if (count == password.size()){ //looping through password is done
-//          return password
-//       } else if (){ //password contains a char at i in other
-//          //recursive case: return exclude(password, other);
-//          //return password = remove that character
-//       } else {
-//          //return exclude(password, other)
-//       }
-//    }
-//    
-//    private boolean contains(char val, StrongPasswordGenerator other){
-//       for (int i = 0; i < other.size(); i++){
-//          if (other.toString().charAt(i) == val){
-//             return !(other.toString().charAt(i) == val);
-//          }
-//       }
-//       return true;
-//    }
-   public static String toString(ArrayList<Character> password){
-      String str = "";
-      for (int i = 0; i < password.size(); i++){
-         if (password.charAt(i) == '['){
-            password.remove(i);
-         }
-      }
-      return str;
-   }
+//     public static void exclude(ArrayList<Character> other){
+//        password = exclude(password, other, 0);
+//     }
+    
+//     private static ArrayList<Character> exclude(ArrayList<Character> password, 
+//                                ArrayList<Character> other, int count){
+//        if (count == password.size()){ //base case: looping through password is done
+//           //return password
+//        } else if (){ //password contains a char at i in other
+//           //recursive case: return exclude(password, other);
+//           //return password = remove that character
+//        } else {
+//           //return exclude(password, other)
+//        }
+//     }
+    
+    private boolean contains(char val, StrongPasswordGenerator other){
+       for (int i = 0; i < other.size(); i++){
+          if (other.toString().charAt(i) == val){
+             return !(other.toString().charAt(i) == val);   //found bug, should return true
+          }
+       }
+       return true;                                         //should return false;
+    }
    
 }
