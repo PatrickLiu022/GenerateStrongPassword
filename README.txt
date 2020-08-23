@@ -14,13 +14,16 @@ FEATURES:
          Resolved password not meeting length requirements after excluding characters. 8/18
          Resolved Regenerating unwanted characters bug. 8/18
 	 Resolved previous password adding on to new password bug. 8/20
+	 Resolved exclude method accounting for brackets and commas, 8/22
+         User can enter as many passwords as desired. 8/22
 
    IN PROGRESS:
-      Printing the password to an output file.
+      Features:
+         Printing the password to an output file.
+	 Changing password for specific account (maps)
       Bugs: 
-	 exclude method accounts for brackets and commas, messing up count variables
+	 excluding characters adds on those characters to the end of the password
    FUTURE FEATURES:
-      User can enter as many passwords as desired.
       Can choose which passwords to change for which accounts.
 
 FUTURE DEVELOPMENT:
@@ -34,6 +37,6 @@ StrongPasswordGenerator
    StrongPasswordGenerator stores a randomly generated password using ASCII values stored in an
    ArrayList object.
 
-This is just a rough draft! Contact me if you want to work on it with me!
+Contact me if you want to work on it with me!
 
 Email: pzl2@uw.edu
