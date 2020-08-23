@@ -5,8 +5,7 @@ Patrick Liu
 
 
 /*BUGS
-exclude: adding chars by calling contains generated 
-chars that were specified to be excluded
+exclude method: adds on excluded characters to the end after removing them
 */
 import java.util.*;
 
