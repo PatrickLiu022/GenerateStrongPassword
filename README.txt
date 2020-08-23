@@ -44,6 +44,38 @@ StrongPasswordGenerator
    StrongPasswordGenerator stores a randomly generated password using ASCII values stored in an
    ArrayList object.
 
+   public StrongPasswordGenerator()
+	Initializes a StrongPasswordGenerator object to size 0;
+
+   public StrongPasswordGenerator(String data)
+	Constructs a password inventory of characters from ASCII characters with values 
+	33 - 57 and 65 - 126 and stores the data in a list, respectively. Stores values
+	in other necessary data fields as well.
+
+   public int size()
+	Returns the number of elements in the list.
+ 
+   public ArrayList<Character> get()
+	Returns all elements of the list
+
+   public void set(int length) 
+	Sets a new password that is as long as the given length by randomly choosing from 
+	the permitted ASCII characters and storing it in the password inventory. If the 
+	a password length that is less than 6 is passed, an IllegalArgumentException is 
+	thrown.
+
+   public ArrayList<Character> exclude(ArrayList<Character> other)
+	Compares the password inventory with another password inventory and removes any
+	element in the original password inventory. Then adds in as many ASCII characters
+	as removed that are permitted by the user.
+
+   public boolean includes(char val, ArrayList<Character> other)
+	Returns whether or not a specific character from the original password inventory 	
+	exists in another password inventory.
+
+   public String toString()
+	Takes the password inventory and stores all the elements into one String.
+
 Contact me if you want to work on it with me!
 
 Email: pzl2@uw.edu
