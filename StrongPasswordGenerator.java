@@ -102,10 +102,10 @@ public class StrongPasswordGenerator {
    public boolean includes(char val, ArrayList<Character> other){
       for (int i = 0; i < other.size(); i++){
          if (other.get(i) == val){
-            return !(other.get(i) == val);
+            return other.get(i) == val;
          }
       }
-      return true;
+      return false;
    } 
   
    //post: Takes the array of individual characters in the password
