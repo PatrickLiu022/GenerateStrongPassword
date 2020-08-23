@@ -32,8 +32,11 @@ public class PasswordMaker {
    
    public static void intro(){
       System.out.println("Welcome to the Strong Password Generator");
-      System.out.println("This program will help you create a strong password");
-      System.out.println("Use this anytime you need a password change\n");
+      System.out.println("This program will help you create a strong password.");
+      System.out.println("A strong password contains upper and lower case");
+      System.out.println("characters, numerical characters, and symbols.");
+      System.out.println("It also must be at least 6 characters long");
+      System.out.println("Use this program anytime you need a password change\n");
 
    }
    

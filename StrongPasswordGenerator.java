@@ -56,7 +56,7 @@ public class StrongPasswordGenerator {
       int count = 0;
       r = new Random();
 
-      if (length <= 0){
+      if (length < 6){
          throw new IllegalArgumentException();
       }
 
@@ -102,8 +102,8 @@ public class StrongPasswordGenerator {
    
    public boolean includes(char val, ArrayList<Character> other){
       for (int i = 0; i < other.size(); i++){
-         if (other.toString().charAt(i) == val){
-            return !(other.toString().charAt(i) == val);
+         if (other.get(i) == val){
+            return !(other.get(i) == val);
          }
       }
       return true;
