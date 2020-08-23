@@ -67,45 +67,41 @@ public class StrongPasswordGenerator {
    //      specified by the user
    //psot: Checks if the characters the user wants to exclude exists in the
    //      new generated password and removes it if it exists.
-//    public ArrayList<Character> exclude(StrongPasswordGenerator other){
-//       int count = 0;
-//       
-//       for (Character pass : password){
-//          for(Character toRemove : other.password){
-//             if (pass.equals(toRemove)){
-//                password.remove(pass);
-//                count++;
-//                break;
-//             }
-//          }
-//       }
-//       
-//       exclude(count, other);  
-// 
-//       return password;
-//    }
-//    
-//    private void exclude(int count, StrongPasswordGenerator other){
-//       int val = r.nextInt(ASCII) + 33;
-//       
-//       for (int i = count; i > 0; i++){
-//          while (other.contains((char) val, other)){
-//             val = r.nextInt(ASCII) +  33;  
-//          } 
-//          password.add((char) val);
-//          count--;        
-//       } 
-//    }
-//    
-//    private boolean contains(char val, StrongPasswordGenerator other){
-//       for (int i = 0; i < other.size(); i++){
-//          if (other.toString().charAt(i) == val){
-//             return !(other.toString().charAt(i) == val);
-//          }
-//       }
-//       return true;
-//    }  
-
+   public ArrayList<Character> exclude(ArrayList<Character> other){
+      int count = 0;
+      
+      for (int i = 0; i < password.size(); i++){
+         if (other.contains(password.get(i))){
+            password.remove(password.get(i));
+            count++;
+         }
+      }
+      
+      exclude(count, other);  
+      return password;
+   }
+   
+   private void exclude(int count, ArrayList<Character> other){
+      int val = r.nextInt(ASCII) + 33;
+      
+      for (int i = count; i > 0; i--){
+         do {
+            val = r.nextInt(ASCII) + 33;
+         } while(includes((char) val, other));
+       
+         password.add((char) val);        
+      } 
+   }
+   
+   public boolean includes(char val, ArrayList<Character> other){
+      for (int i = 0; i < other.size(); i++){
+         if (other.toString().charAt(i) == val){
+            return !(other.toString().charAt(i) == val);
+         }
+      }
+      return true;
+   } 
+  
    //post: Takes the array of individual characters in the password
    //      and stores them together in a string
    public String toString(){
@@ -115,37 +111,5 @@ public class StrongPasswordGenerator {
       }
       return strPass;
    }
-   
-   
-   
-   public void exclude(StrongPasswordGenerator other){
-      password = exclude(password, other.password, 0);
-   }
-   
-   private ArrayList<Character> exclude(ArrayList<Character> password, 
-                               ArrayList<Character> other, int count){
-      ListIterator<Character> passList = password.listIterator();
-      ListIterator<Character> otherList = other.listIterator();
-      
-      if (count == other.size()+1) { //base case
-         return password;
-      } else if (passList.next() == otherList.next()){
-         password.remove(passList);
-         passList = passList.next();
-         otherList = other.next();
-         return exclude(password, other, count++);
-      } else {
-         password.remove(passList);
-         passList = passList.next();
-         return exclude(password, other, count++);
-      }
-   }
     
-   
-   
-   
-   
-   
-   
-   
 }
