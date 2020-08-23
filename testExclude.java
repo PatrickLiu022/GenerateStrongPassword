@@ -1,5 +1,8 @@
 /* Patrick Liu
    08/22/2020
+   Through testing a chunk of code, I was able to visualize and see not only
+   where it's not going to specs, this helped me compare between methods easier
+   and actually let me understand why it wasn't going to specs.
 */
 
 import java.util.*;
@@ -43,8 +46,8 @@ public class testExclude {
     //    public static void exclude(ArrayList<Character> other){
     //       password = exclude(password, other, 0);
     //    }
-    //    
-    //    private static ArrayList<Character> exclude(ArrayList<Character> password, 
+    //
+    //    private static ArrayList<Character> exclude(ArrayList<Character> password,
     //                               ArrayList<Character> other, int count){
     //       if (count == password.size()){ //looping through password is done
     //          return password
@@ -55,7 +58,7 @@ public class testExclude {
     //          //return exclude(password, other)
     //       }
     //    }
-    //    
+    //
     //    private boolean contains(char val, StrongPasswordGenerator other){
     //       for (int i = 0; i < other.size(); i++){
     //          if (other.toString().charAt(i) == val){
