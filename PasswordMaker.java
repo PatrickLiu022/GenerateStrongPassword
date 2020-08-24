@@ -86,5 +86,5 @@ public class PasswordMaker {
         String generatedPass = strongPass.toString();
         System.out.println("Your new strong password is " + generatedPass);
     }
-
+    
 }
