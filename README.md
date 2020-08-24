@@ -47,6 +47,6 @@ You can choose to exclude certain characters as well.
 
 
 #### Follow ups:
-Contact me if you want to work on it with me!
+Feel free to contact me if you want to work on it with me!
 
 Email: pzl2@uw.edu
