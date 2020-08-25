@@ -1,50 +1,56 @@
-/*
-Patrick Liu 
-start PasswordMaker:08/18/2020 
-PasswordMaker is functional: 8/22/2020
-*/
-
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
-//class prompts user to generate a password, with or without certain
-//characters only.
 public class PasswordMaker {
 
-    //pre:  prompts user to specify if they want to exclude characters
-    //      and how long they want the password to be. User can end the
-    //      program anytime.
-    //post: prints out the new strong password for the user.
     public static void main(String[] args) throws FileNotFoundException{
-        Scanner console = new Scanner(System.in);
         PrintStream output = new PrintStream(new File("passwordFile.txt"));
+        Scanner console = new Scanner(System.in);
         String start;
         String password = "";
         int count = 0;
         
         intro();
-
+        
+        System.out.println("enter 1");
+        int num = console.nextInt();
+        
+        output.println("made it to " + num + "st post");
+        
+        intro();
+        output.println("test second post: " + num + "8 number: " + 10);
         do {
+            output.println("test third post: " + num + "8 number: " + 10);
             StrongPasswordGenerator strongPass = new StrongPasswordGenerator(""); //new StrongPasswordGenerator object
             System.out.println("Character exclusion:");
             System.out.println("type no for no exclusion, yes to exclude characters");
             System.out.print("Exclude characters? ");
             String exclude = console.next();
+            output.println("test fourth post: " + num + "8 number: " + 10);
             if (exclude.toLowerCase().startsWith("y")) {
                 password = excludePassword(strongPass, console, exclude);
             } else {
                 password = regularPassword(strongPass, console);
+                output.println("else conditional: " + num + "8 number: " + 10);
             }
             System.out.println("Your new strong password is: " + password);
             count++;
-            //printToOutput(output, password, count);
+            output.println("before end program: " + num + "8 number: " + 10);
+            //output.println("password "+ count + ": " + password);
             System.out.print("End program? (y/n): ");
             start = console.next();
+            output.println("password: " + password);
         } while (!start.startsWith("y"));
+        output.println("out do while: " + num + "8 number: " + 10);
+        output.println("last test print password: " + password);
+        output.println("password " + num + ": " + password);
 
+        
+        
+        
+        
     }
-
-
+    
     //post: prints out an introduction and defines what a strong
     //      password is for the user
     public static void intro() {
@@ -63,7 +69,7 @@ public class PasswordMaker {
     public static String excludePassword(StrongPasswordGenerator strongPass, 
                                          Scanner console, String exclude){
         StrongPasswordGenerator excluder;
-        ArrayList < Character > list;
+        ArrayList <Character> list;
         //Scanner consoleNew = new Scanner(System.in);
 
         System.out.print("Which characters to exclude? ");
@@ -75,7 +81,7 @@ public class PasswordMaker {
         } catch (Exception e) {
             System.out.println("Please enter an integer value greater than 6");
         }
-        strongPass.exclude(excluder.get());
+        strongPass.exclude(excluder);
         //strongPass.toString();
         return strongPass.toString();
         //System.out.println("Your new strong password is: " + strongPass);
@@ -95,10 +101,5 @@ public class PasswordMaker {
         return strongPass.toString();
         //System.out.println("Your new strong password is " + generatedPass);
     }
-    
-    public static void printToOutput(PrintStream output, String password, int count){
-        System.setOut(output);
-        output.println("Password" + count + ": " + password);
-    }
-    
+
 }

@@ -12,7 +12,7 @@ import java.util.*;
 public class StrongPasswordGenerator {
 
     private int size; //records password size.
-    private ArrayList <Character> password; //contains generated password.
+    private ArrayList<Character> password; //contains generated password.
     private Random r;
 
     private static final int ASCII = 93; //will choose from 93 kinds of ASCII characters.
@@ -40,7 +40,7 @@ public class StrongPasswordGenerator {
     }
 
     //post: returns the password.
-    public ArrayList <Character> get() {
+    public ArrayList<Character> get() {
         return password;
     }
 
@@ -70,18 +70,18 @@ public class StrongPasswordGenerator {
     //      specified by the user.
     //psot: Checks if the characters the user wants to exclude exists in the
     //      new generated password and removes it if it exists.
-    public ArrayList <Character> exclude(ArrayList <Character> other) {
+    public ArrayList<Character> exclude(StrongPasswordGenerator other) {
         int count = 0;
 
         for (int i = 0; i < password.size(); i++) {
-            if (other.contains(password.get(i))) {
+            if (other.get().contains(password.get(i))) {
                 password.remove(password.get(i));
                 i--;
                 count++;
             }
         }
 
-        exclude(count, other);
+        exclude(count, other.get());
         return password;
     }
 
