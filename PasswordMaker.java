@@ -26,20 +26,18 @@ public class PasswordMaker {
 
         do {
             StrongPasswordGenerator strongPass = new StrongPasswordGenerator(""); //new StrongPasswordGenerator object
-            output = System.out;
             System.out.println("Character exclusion:");
             System.out.println("type no for no exclusion, yes to exclude characters");
             System.out.print("Exclude characters? ");
             String exclude = console.next();
             if (exclude.toLowerCase().startsWith("y")) {
                 password = excludePassword(strongPass, console, exclude);
-                output.println("password " + count + ":\t" + password);
             } else {
                 password = regularPassword(strongPass, console);
-                output.println("password " + count + ":\t" + password);
             }
             System.out.println("Your new strong password is: " + password);
             count++;
+            //printToOutput(output, password, count);
             System.out.print("End program? (y/n): ");
             start = console.next();
         } while (!start.startsWith("y"));
@@ -96,6 +94,11 @@ public class PasswordMaker {
         }
         return strongPass.toString();
         //System.out.println("Your new strong password is " + generatedPass);
+    }
+    
+    public static void printToOutput(PrintStream output, String password, int count){
+        System.setOut(output);
+        output.println("Password" + count + ": " + password);
     }
     
 }
