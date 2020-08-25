@@ -23,6 +23,8 @@ You can choose to exclude certain characters as well.
     - *resolved 8/22*
 - [x] Resolved excluding characters adds on those characters to the end of the password
     - *resolved 8/22* 
+- [ ] Output password not printing to output file.
+    - *new bug*
 
 #### In Progress: 
 - [ ] Printing the password to an output file.
