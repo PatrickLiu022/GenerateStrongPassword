@@ -71,6 +71,7 @@ public class PasswordMaker {
             strongPass.set(console.nextInt());
         } catch (Exception e) {
             System.out.println("Please enter an integer value greater than 6");
+            return "too short";
         }
         strongPass.exclude(excluder);
         return strongPass.toString();
@@ -86,6 +87,7 @@ public class PasswordMaker {
             strongPass.set(console.nextInt());
         } catch (Exception e) {
             System.out.println("Please enter an integer value greater than 6");
+            return "too short";
         }
         return strongPass.toString();
     }
