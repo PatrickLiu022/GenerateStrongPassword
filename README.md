@@ -23,11 +23,11 @@ You can choose to exclude certain characters as well.
     - *resolved 8/22*
 - [x] Resolved excluding characters adds on those characters to the end of the password
     - *resolved 8/22* 
-- [ ] Output password not printing to output file.
-    - *new bug*
+- [x] Output password not printing to output file.
+    - *resolved 8/25*
 
 #### In Progress: 
-- [ ] Printing the password to an output file.
+- [x] Printing the password to an output file.
 - [ ] Changing password for specific account (maps).
 
 #### Future Roadmap:

@@ -27,7 +27,7 @@ public class StrongPasswordGenerator {
     //      a stores each character individually. Stores the
     //      size of the password.
     public StrongPasswordGenerator(String data) {
-        password = new ArrayList <Character> ();
+        password = new ArrayList<Character>();
         for (int i = 0; i < data.length(); i++) {
             password.add(data.charAt(i));
             size++;
